@@ -6,103 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Background Color Swicher</title>
 
-</head>
-
-<body>
     <style>
-        .button {
-            border: 0px solid black;
-            padding: 10px;
-            margin: 1px;
-            border-width: 10px;
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
 
-        #grey {
-            background-color: grey;
+        .container {
+            position: relative;
+            height: 100%;
         }
 
-        #pink {
-            background-color: pink;
+        .color-picker {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            padding: 0 8px;
         }
 
-        #red {
+        .color-picker-buttons {
+            display: flex;
+            gap: 10px;
+            background-color: #fff;
+            padding: 8px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-button {
+            outline: none;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .color-button-red {
             background-color: red;
         }
 
-        #blue {
-            background-color: blue;
-        }
-
-        #green {
+        .color-button-green {
             background-color: green;
         }
 
-        #yellow {
+        .color-button-blue {
+            background-color: blue;
+        }
+
+        .color-button-messenger {
+            background-color: #0072ff;
+        }
+
+        .color-button-yellow {
             background-color: yellow;
+            color: black;
+        }
+
+        .color-button-pink {
+            background-color: pink;
+        }
+
+        .color-button-purple {
+            background-color: purple;
+            color: black;
         }
     </style>
+</head>
 
-    <div>
-        <h1>Color Scheme Switcher</h1>
+<body>
+ 
+    <div class="container" id="colorContainer">
+        <div class="color-picker">
+            <div class="color-picker-buttons">
+                <button class="color-button color-button-red" id="red">Red</button>
+                <button class="color-button color-button-green" id="green">Green</button>
+                <button class="color-button color-button-blue" id="blue">Blue</button>
+                <button class="color-button color-button-messenger" id="LightBlue">Messenger Color</button>
+                <button class="color-button color-button-yellow" id="yellow">Yellow</button>
+                <button class="color-button color-button-pink" id="pink">Pink</button>
+                <button class="color-button color-button-purple" id="purple">Purple</button>
+            </div>
+        </div>
     </div>
-    <div>
-        <span class="button" id="grey"></span>
-        <span class="button" id="pink"></span>
-        <span class="button" id="red"></span><br><br><br><br>
-        <span class="button" id="blue"></span>
-        <span class="button" id="yellow"></span>
-        <span class="button" id="green"></span>
-    </div>
-
 
 
 
     <script>
-        const btn = document.querySelectorAll('.button')
-        // console.log(btn)
-        const body = document.body
-        // console.log(body)
-
+        const btn = document.querySelectorAll(".color-button");
+        // console.log("object")
+        // console.log(btn);
+        const body = document.body;
         btn.forEach((button) => {
-            // console.log(btn)
+            // console.log(button)
+            // console.log(btn) Return NodeListp[]
             button.addEventListener('click', function (e) {
                 // console.log(e)
                 // console.log(e.target)
+                console.log(e.target.id)
+                body.style.backgroundColor = e.target.id
 
-                switch (e.target.id) {
-                    case 'green':
-                        // console.log(e.target.id)
-                        body.style.backgroundColor = e.target.id
-                        break;
-                    case 'grey':
-                        // console.log(e.target.id)
-                        body.style.backgroundColor = e.target.id
-                        break;
-                    case 'pink':
-                        // console.log(e.target.id)
-                        body.style.backgroundColor = e.target.id
-                        break;
-                    case 'blue':
-                        // console.log(e.target.id)
-                        body.style.backgroundColor = e.target.id
-                        break;
-                    case 'yellow':
-                        // console.log(e.target.id)
-                        body.style.backgroundColor = e.target.id
-                        break;
-                    case 'red':
-                        // console.log(e.target.id)
-                        body.style.backgroundColor = e.target.id
-                        break;
-
-
-                    default:
-                        console.log("Oops... Not found ")
-                        break;
-                }
             })
         })
     </script>
+
+    
 </body>
 
 </html>
