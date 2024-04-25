@@ -1,7 +1,7 @@
 # Project Related to DOM
 
 ## project link
-[click here] (https://app.netlify.com/sites/ornate-beijinho-13b823/overview)
+[click here] (https://ornate-beijinho-13b823.netlify.app/)
 # Solution Code
 
 ## project 1
