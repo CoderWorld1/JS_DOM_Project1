@@ -55,3 +55,26 @@ const btn = document.querySelectorAll('.button')
 
 ```
 
+## Updated Code
+
+```javascript
+const btn = document.querySelectorAll(".color-button");
+        // console.log("object")
+        // console.log(btn);
+        const body = document.body;
+        btn.forEach((button) => {
+            // console.log(button)
+            // console.log(btn) Return NodeListp[]
+            button.addEventListener('click', function (e) {
+                // console.log(e)
+                // console.log(e.target)
+                console.log(e.target.id)
+                body.style.backgroundColor = e.target.id
+
+            })
+        })
+
+```
+
+
+
